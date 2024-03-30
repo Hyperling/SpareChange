@@ -14,10 +14,10 @@ Project only takes into consideration the USA's cent system.
 Completed:
 
 - PHP
+- Kotlin
 
 Planned:
 
-- Kotlin
 - Bash
 - Python
 - Node.js
