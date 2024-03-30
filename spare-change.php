@@ -1,4 +1,4 @@
-#!`which php`
+#!/usr/bin/php
 <?php
 /* 2024-03-24 Hyperling
 // Calculate the optimal amount of spare change to keep
