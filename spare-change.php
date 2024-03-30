@@ -8,7 +8,7 @@
 echo "Got any spare change?\n";
 
 $pennies = 0; $nickels = 0; $dimes = 0; $quarters = 0;
-$maxpennies = 0; $maxnickels = 0; $maxdimes = 0; $maxquarters = 0;
+$maxPennies = 0; $maxNickels = 0; $maxDimes = 0; $maxQuarters = 0;
 
 for ($change = 1; $change < 100; $change++) {
 	$quarters = floor($change / 25);
@@ -22,33 +22,46 @@ for ($change = 1; $change < 100; $change++) {
 
 	$pennies = $remainder;
 
-	if ($quarters > $maxquarters) {
-		$maxquarters = $quarters;
-		echo "Change '{$change}c' required adding another quarter, now need '$maxquarters'.\n";
+	if ($quarters > $maxQuarters) {
+		$maxQuarters = $quarters;
+		echo "Amount '{$change}c' required adding another quarter, " .
+		"now need '$maxQuarters'.\n"
+		;
 	}
-	if ($dimes > $maxdimes) {
-		$maxdimes = $dimes;
-		echo "Change '{$change}c' required adding another dime, now need '$maxdimes'.\n";
+	if ($dimes > $maxDimes) {
+		$maxDimes = $dimes;
+		echo "Amount '{$change}c' required adding another dime, " .
+		"now need '$maxDimes'.\n"
+		;
 	}
-	if ($nickels > $maxnickels) {
-		$maxnickels = $nickels;
-		echo "Change '{$change}c' required adding another nickel, now need '$maxnickels'.\n";
+	if ($nickels > $maxNickels) {
+		$maxNickels = $nickels;
+		echo "Amount '{$change}c' required adding another nickel, " .
+		"now need '$maxNickels'.\n"
+		;
 	}
-	if ($pennies > $maxpennies) {
-		$maxpennies = $pennies;
-		echo "Change '{$change}c' required adding another penny, now need '$maxpennies'.\n";
+	if ($pennies > $maxPennies) {
+		$maxPennies = $pennies;
+		echo "Amount '{$change}c' required adding another penny, " .
+			"now need '$maxPennies'.\n"
+		;
 	}
 }
 
-echo "You can pay any cent value with exact change if you have $maxquarters quarter(s), $maxdimes dime(s), $maxnickels nickel(s), and $maxpennies penn(y,ies).\n";
+echo "You can pay any cent value with exact change if you have " .
+	"$maxQuarters quarter(s), $maxDimes dime(s), " .
+	"$maxNickels nickel(s), and $maxPennies penn(y,ies).\n"
+;
 
-$quarters = $maxquarters * 25;
-$dimes = $maxdimes * 10;
-$nickels = $maxnickels * 5;
-$pennies = $maxpennies;
+$quarters = $maxQuarters * 25;
+$dimes = $maxDimes * 10;
+$nickels = $maxNickels * 5;
+$pennies = $maxPennies;
 
 $change = $quarters + $dimes + $nickels + $pennies;
 
-echo "That means you only ever need to carry {$change}c unless going to multiple locations on foot.\n";
+echo "That means you only ever need to carry {$change}c " .
+	"unless going to multiple locations in one trip.\n"
+;
 
 exit(0);
